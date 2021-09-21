@@ -47,6 +47,7 @@
             this.btnInteger.TabIndex = 0;
             this.btnInteger.Text = "Get Your Integer";
             this.btnInteger.UseVisualStyleBackColor = true;
+            this.btnInteger.Click += new System.EventHandler(this.btnInteger_Click);
             // 
             // btnDouble
             // 

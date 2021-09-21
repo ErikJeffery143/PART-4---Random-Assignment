@@ -13,9 +13,7 @@ namespace PART_4___Random_Assingment
     public partial class RandomNumbers : Form
     {
         Random generator = new Random();
-        int Min;
-        int Max;
-        int randNum;
+
 
 
         public RandomNumbers()
@@ -30,12 +28,17 @@ namespace PART_4___Random_Assingment
 
         private void btnDouble_Click(object sender, EventArgs e)
         {
-            
+            Double Min;
+            Double Max;
+            Double randNum;
+            Double randNum2;
 
-            randNum = generator.Next(Min, Max);
-           
-            
-            lblFinal.Text = randNum + "";
+            Min = Convert.ToDouble(numMin.Text);
+            Max = Convert.ToDouble(numMax.Text);
+            randNum = generator.Next((int)Min, (int)Max);
+            randNum2 = generator.NextDouble();
+             
+            lblFinal.Text = (randNum - 1 + randNum2) + "";
 
 
 
@@ -47,6 +50,20 @@ namespace PART_4___Random_Assingment
         private void lblMin_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnInteger_Click(object sender, EventArgs e)
+        {
+            int Min;
+            int Max;
+            int randNum;
+
+
+            Min = Convert.ToInt32(numMin.Text);
+            Max = Convert.ToInt32(numMax.Text);
+            randNum = generator.Next((int)Min, (int)Max);
+
+            lblFinal.Text = randNum + "";
         }
     }
 }
